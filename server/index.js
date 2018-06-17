@@ -17,7 +17,7 @@ app.use('/restaurant/:restaurantId', express.static(path.join(__dirname, '../pub
 app.use('/overviews', proxy('http://cavatableoverviews-env.5sves92ky9.us-west-1.elasticbeanstalk.com/'));
 app.use('/photos', proxy('http://cavatablephotos-env-1.23pb2q7mim.us-east-2.elasticbeanstalk.com/'));
 app.use('/menus', proxy('http://cavatablemenus-env.5sves92ky9.us-west-1.elasticbeanstalk.com/'));
-app.use('/reviews', proxy('http://cavatable.us-west-1.elasticbeanstalk.com/'));
+app.use('/reviews', proxy('http://CavatableFec-env.psexkp69kr.us-west-1.elasticbeanstalk.com'));
 app.use('/reservations', proxy('http://cavareservations-env.sqh9cj65af.us-east-2.elasticbeanstalk.com/'));
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
