@@ -1,0 +1,23 @@
+const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const proxy = require('express-http-proxy');
+
+const app = express();
+const port = process.env.PORT || 8080;
+
+app.use(bodyParser.json());
+// app.use('/', (req, res, next) => {
+//   console.log(req.url);
+//   next();
+// });
+
+app.use('/restaurant/:restaurantId', express.static(path.join(__dirname, '../public')));
+
+app.use('/overviews', proxy('http://localhost:3003'));
+app.use('/photos', proxy('http://localhost:3004'));
+app.use('/menus', proxy('http://localhost:3005'));
+app.use('/reviews', proxy('http://localhost:3002'));
+app.use('/reservations', proxy('http://localhost:3001'));
+
+app.listen(port, () => console.log(`Listening on port ${port}!`));
