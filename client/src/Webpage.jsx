@@ -24,7 +24,6 @@ const Webpage = props => (
         </div>
         <div className="col-3">
           <div id="appReserve" className={`sticky-top white`}>
-            <h1>ANDREW'S PHOTO MODULE GOES HERE!</h1>
           </div>
         </div>
       </div>
